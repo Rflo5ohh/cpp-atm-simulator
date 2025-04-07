@@ -1,0 +1,45 @@
+#include <iostream>
+#include <string>
+
+// Function prototypes
+void checkBalance(double balance);
+void deposit(double& balance);
+void withdraw(double& balance);
+void exitSystem();
+
+int main() 
+{
+    double balance = 5000.0; // Initial balance
+
+    int choice;
+    do {
+        // Display menu
+        std::cout << "\nATM Menu:" << std::endl;
+        std::cout << "1. Check Balance" << std::endl;
+        std::cout << "2. Deposit" << std::endl;
+        std::cout << "3. Withdraw" << std::endl;
+        std::cout << "4. Exit" << std::endl;
+        std::cout << "Enter your choice: ";
+        std::cin >> choice;
+
+        // Process user choice
+        switch (choice) {
+            case 1:
+                checkBalance(balance);
+                break;
+            case 2:
+                deposit(balance);
+                break;
+            case 3:
+                withdraw(balance);
+                break;
+            case 4:
+                exitSystem();
+                break;
+            default:
+                std::cout << "Invalid choice. Please try again." << std::endl;
+        }
+    } while (choice != 4);
+
+    return 0;
+}
